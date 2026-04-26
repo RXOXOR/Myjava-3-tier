@@ -4,6 +4,7 @@
     <groupId>com.example</groupId>
     <artifactId>social</artifactId>
     <version>1.0</version>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -13,13 +14,20 @@
 
     <dependencies>
 
-        <!-- Web API -->
+        <!-- Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Database -->
+        <!-- Tomcat (external) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -40,8 +48,8 @@
     </dependencies>
 
     <build>
+        <finalName>social</finalName>
         <plugins>
-            <!-- Creates JAR -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
